@@ -10,14 +10,18 @@ export class ChatComponent {
 
   public mensaje = '';
   constructor(private _cs: ChatsService) {
-    this._cs.cargarMensajes()
-            .subscribe( (mensajes: any[]) => {
-              console.log(mensajes);
-            });
+    this._cs.obtenerMensajes$()
+            .subscribe();
   }
 
   enviarMensaje() {
-    console.log(this.mensaje);
+    if (this.mensaje.length === 0) { return; }
+    this._cs.enviarMensaje( this.mensaje )
+        .then(() => {
+          this.mensaje = '';
+          console.log('Mensaje enviado');
+        })
+        .catch( (err) => console.error('Error al enviar', err) );
   }
 
 }
