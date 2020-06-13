@@ -1,3 +1,5 @@
-<div class="container">
-  <h1>Hola mundo!</h1>
-</div>
+<ul>
+  <li class="text" *ngFor="let chat of chats | async">
+    {{chat.mensaje}}
+  </li>
+</ul>
