@@ -9,7 +9,7 @@ import { ChatsService } from '../../providers/chats.service';
 export class ChatComponent {
 
   public mensaje = '';
-  constructor(private _cs: ChatsService) {
+  constructor(public _cs: ChatsService) {
     this._cs.obtenerMensajes$()
             .subscribe();
   }
