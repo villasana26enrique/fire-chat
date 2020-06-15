@@ -19,11 +19,13 @@ import { ChatComponent } from './components/chat/chat.component';
 
 // Providers
 import { ChatsService } from './providers/chats.service';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent
+    ChatComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
